@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>jp.co.future.ideausqlfmt</id>
   <name>IntelliJ uroboroSQL Formatter</name>
-  <version>0.1</version>
+  <version>0.1.0</version>
   <vendor email="techblog@future.co.jp" url="https://github.com/future-architect/idea-uroborosql-formatter">Future Architect, Inc.</vendor>
   <category>Formatting</category>
   <description><![CDATA[
@@ -31,7 +31,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-    <h2>0.1 (2017/04/06)</h2>
+    <h2>0.1.0 (2017/04/06)</h2>
     <ul>
       <li>First release</li>
     </ul>
