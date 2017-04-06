@@ -1,0 +1,57 @@
+<idea-plugin>
+  <id>jp.co.future.ideausqlfmt</id>
+  <name>IntelliJ uroboroSQL Formatter</name>
+  <version>0.1</version>
+  <vendor email="techblog@future.co.jp" url="https://github.com/future-architect/idea-uroborosql-formatter">Future Architect, Inc.</vendor>
+  <category>Formatting</category>
+  <description><![CDATA[
+    <h1>IntelliJ uroboroSQL Formatter</h1>
+
+    <img src="https://github.com/future-architect/uroboroSQL-formatter/raw/master/image/uroboroSQLformatter_logo.png">
+
+    <p>UroboroSQL Formatter is often used in enterprise systems,
+    For formatting to a highly maintainable style even for very long SQL (1 K step or more)
+    It is a plug-in of IntelliJ IDEA.</p>
+
+    <p>In particular, in countries where English is not their mother tongue, such as Japan,
+    comments may be included in SELECT clauses.
+    In that case, we will align the vertical position of the AS clause and the comment,
+    pursuing the viewability which can be said as artistic anymore,
+    This was developed to realize this automatically.</p>
+
+    <h2>How to use</h2>
+
+    <p>Use Ctrl + Cmd + L on OS X, or Ctrl + Alt + L on Windows to format currently active document.</p>
+    <p>The following options can be selected by the Preferences dialog.</p>
+    <ul>
+      <li>Convert reserved words and identifiers to upper case</li>
+      <li>Using backslash escape sequences</li>
+      <li>Comment syntax type(uroboroSQL or DOMA2)</li>
+    </ul>
+    ]]></description>
+
+  <change-notes><![CDATA[
+    <h2>0.1 (2017/04/06)</h2>
+    <ul>
+      <li>First release</li>
+    </ul>
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="145.0"/>
+
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceImplementation="jp.co.future.ideausqlfmt.settings.UroborosqlFormatterSettings"/>
+    <applicationConfigurable instance="jp.co.future.ideausqlfmt.settings.UroborosqlFormatterSettingsPanel"/>
+  </extensions>
+
+  <actions>
+    <action id="jp.co.future.ideausqlfmt.UroborosqlFormatterAction" class="jp.co.future.ideausqlfmt.UroborosqlFormatterAction" text="Format SQL" description="Format SQL ">
+      <add-to-group group-id="CodeFormatGroup" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta L"/>
+    </action>
+  </actions>
+
+</idea-plugin>
