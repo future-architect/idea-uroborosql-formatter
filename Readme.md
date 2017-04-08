@@ -49,7 +49,7 @@ How to Use
 ----------
 
 -	Select "Format SQL" from the Code menu
--	Use Alt + Shift + L(Cmd + SHift + L on OS X) to format currently active document.</p>
+-	Use Alt + Shift + L on Windows, Cmd + Shift + L on OS X to format currently active document.</p>
 
 License
 -------

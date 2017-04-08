@@ -25,7 +25,7 @@
 
     <h2>How to use</h2>
 
-    <p>Use Alt + Shift + L (Cmd + Shift + L on OS X) to format currently active document.</p>
+    <p>Use Alt + Shift + L on Windows, Cmd + Shift + L on OS X to format currently active document.</p>
     <p>The following options can be selected by the Preferences dialog.</p>
     <ul>
       <li>Convert reserved words and identifiers to upper case</li>
@@ -39,7 +39,6 @@
     <ul>
       <li>change default keyboard shortcut</li>
     </ul>
-    ]]>
     <h2>0.1.0 (2017/04/06)</h2>
     <ul>
       <li>First release</li>
