@@ -51,7 +51,7 @@ How to Use
 ----------
 
 -	Codeメニューから「Format SQL」を選択
--	Alt + Shift + L on Windows, Cmd + Shift + L on OS X
+-	Alt + Shift + L on Windows, Cmd + Ctrl + L on OS X
 
 License
 -------

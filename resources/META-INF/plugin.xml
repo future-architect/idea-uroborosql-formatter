@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>jp.co.future.ideausqlfmt</id>
     <name>IntelliJ uroboroSQL Formatter</name>
-    <version>0.1.1</version>
+    <version>0.2.0</version>
     <vendor email="techblog@future.co.jp" url="https://github.com/future-architect/idea-uroborosql-formatter">Future
         Architect, Inc.
     </vendor>
@@ -25,7 +25,7 @@
 
     <h2>How to use</h2>
 
-    <p>Use Alt + Shift + L on Windows, Cmd + Shift + L on OS X to format currently active document.</p>
+    <p>Use Alt + Shift + L on Windows, Cmd + Ctrl + L on OS X to format currently active document.</p>
     <p>The following options can be selected by the Preferences dialog.</p>
     <ul>
       <li>Convert reserved words and identifiers to upper case</li>
@@ -35,13 +35,18 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    <h2>0.2 (2017/04/12)</h2>
+    <ul>
+      <li>Enabled formatting of selected text.</li>
+      <li>Change default keyboard shortcut.</li>
+    </ul>
     <h2>0.1.1 (2017/04/08)</h2>
     <ul>
-      <li>change default keyboard shortcut</li>
+      <li>Change default keyboard shortcut.</li>
     </ul>
     <h2>0.1.0 (2017/04/06)</h2>
     <ul>
-      <li>First release</li>
+      <li>First release.</li>
     </ul>
     ]]>
     </change-notes>
@@ -61,8 +66,8 @@
             <add-to-group group-id="CodeFormatGroup" anchor="first"/>
 
             <keyboard-shortcut keymap="$default" first-keystroke="alt shift L"/>
-            <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta shift L"/>
-            <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="meta shift L"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta ctrl L"/>
+            <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="meta ctrl L"/>
         </action>
     </actions>
 

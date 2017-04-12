@@ -3,7 +3,9 @@ package jp.co.future.ideausqlfmt;
 import com.intellij.notification.*;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.*;
+import com.intellij.openapi.command.*;
 import com.intellij.openapi.editor.*;
+import com.intellij.openapi.project.*;
 import jp.co.future.ideausqlfmt.python.*;
 
 /**
@@ -20,7 +22,13 @@ public class UroborosqlFormatterAction extends AnAction {
 	@Override
 	public void actionPerformed(AnActionEvent e) {
 		Editor editor = e.getData(PlatformDataKeys.EDITOR);
-		String text = editor.getDocument().getText();
+		Project project = e.getData(PlatformDataKeys.PROJECT);
+
+		SelectionModel selectionModel = editor.getSelectionModel();
+		String text = selectionModel.getSelectedText();
+		if (text == null) {
+			text = editor.getDocument().getText();
+		}
 		engine.put("sql", text);
 
 		// bind python config
@@ -33,7 +41,16 @@ public class UroborosqlFormatterAction extends AnAction {
 			String fmtText = engine.get("f");
 
 			// bind editor
-			ApplicationManager.getApplication().runWriteAction(() -> editor.getDocument().setText(fmtText));
+			if (selectionModel.getSelectedText() == null){
+				ApplicationManager.getApplication().runWriteAction(() -> {
+					editor.getDocument().setText(fmtText);
+				});
+			} else {
+				WriteCommandAction.runWriteCommandAction(project, () -> {
+					editor.getDocument().replaceString(selectionModel.getSelectionStart(),
+						selectionModel.getSelectionEnd(), fmtText);
+				});
+			}
 
 			Notifications.Bus.notify(
 				new Notification("uroborosql", "Success",
